@@ -13,6 +13,8 @@ import {
 const Home = () => {
   const router = useRouter();
 
+  const [searchTerm, setSearchTerm] = useState("");
+
   return (
     <SafeAreaView style={{ flex: 1, backgorundColor: COLORS.lightWhite }}>
       <Stack.Screen
@@ -30,7 +32,15 @@ const Home = () => {
       />
       <ScrollView showVirticalScrollIndicator={false}>
         <View style={{ flex: 1, paddings: SIZES.medium }}>
-          <Welcome />
+          <Welcome
+            searchTerm={searchTerm}
+            setSearchTerm={setSearchTerm}
+            handleClick={() => {
+              if (searchTerm) {
+                router.push(`/search/${searchTerm}`);
+              }
+            }}
+          />
           <Popularjobs />
           <Nearbyjobs />
         </View>
