@@ -21,7 +21,7 @@ import {
 import { COLORS, icons, SIZES } from "../../constants";
 import useFetch from "../../hook/useFetch";
 
-const tabs = ["About", "Qualifications", "Responsabilites"];
+const tabs = ["About", "Qualifications", "Responsibilities"];
 
 const JobDetails = () => {
   const params = useSearchParams();
@@ -42,13 +42,20 @@ const JobDetails = () => {
         return (
           <Specifics
             title="Qualifications"
-            points={data[0].job_highlights?.qualifications ?? ["N/A"]}
+            points={data[0].job_highlights?.Qualifications ?? ["N/A"]}
           />
         );
         break;
-      case "Responsabilites":
-        break;
       case "About":
+        return <JobAbout info={data[0].job_description ?? "No job data"} />;
+      case "Responsibilities":
+        return (
+          <Specifics
+            title="Responsibilities"
+            points={data[0].job_highlights?.Responsibilities ?? ["N/A"]}
+          />
+        );
+      default:
         break;
     }
   };
@@ -89,7 +96,7 @@ const JobDetails = () => {
           ) : (
             <View style={{ padding: SIZES.medium, paddingBottom: 100 }}>
               <Company
-                companyLogo={data[0].company_logo}
+                companyLogo={data[0].employer_logo}
                 companyName={data[0].employer_name}
                 jobTitle={data[0].job_title}
                 location={data[0].job_country}
@@ -104,6 +111,13 @@ const JobDetails = () => {
             </View>
           )}
         </ScrollView>
+
+        <JobFooter
+          url={
+            data[0]?.job_google_link ??
+            "https://careers.google.com/jobs/results"
+          }
+        />
       </>
     </SafeAreaView>
   );
