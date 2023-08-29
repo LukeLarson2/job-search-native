@@ -15,6 +15,8 @@ npx create-expo-app -e with-router
 
 - 
 
+<h1>First install the Expo Go app and then scan the QR Codes below</h1>
+
 Check it out here for a preview on Android:<br></br>
 ![QR code for find your job (Android)](https://github.com/LukeLarson2/job-search-native/assets/126184842/99427731-90da-426f-a62d-5374a9436bca)
 
