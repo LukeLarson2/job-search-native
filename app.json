@@ -14,20 +14,20 @@
         "origin": false
       },
       "eas": {
-        "projectId": "f106fb59-8e42-4621-8733-a887fd004a39"
+        "projectId": "your project"
       }
     },
     "runtimeVersion": {
       "policy": "appVersion"
     },
     "updates": {
-      "url": "https://u.expo.dev/f106fb59-8e42-4621-8733-a887fd004a39"
+      "url": "your url"
     },
     "android": {
-      "package": "com.lukelarson2.jobsearchnative"
+      "package": "your package"
     },
     "ios": {
-      "bundleIdentifier": "com.lukelarson2.jobsearchnative"
+      "bundleIdentifier": "your bundle id"
     }
   }
 }
